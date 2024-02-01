@@ -1,0 +1,13 @@
+<%= form_with model: @website do |f| %>
+    <div>
+        <%= f.label :title, "タイトル" %><br>
+        <%= f.text_field :title %>
+    </div>
+    <div>
+        <%= f.label :title, "サイトURL" %><br>
+        <%= f.text_field :url %>
+    </div>
+    <div>
+        <%= f.submit "登録" %>
+    </div>    
+<% end %>
