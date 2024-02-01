@@ -1,0 +1,16 @@
+<h1>お気に入りまとめサイト一覧</h1>
+<% @websites.each do |website| %>
+    <div class="site_container">
+        <div class="site_title">
+            <strong><%= website.title%></strong>
+        </div>
+        <div class="site_url">
+            <%= website.url %>
+        </div>
+        <div>
+            <%= link_to "詳細", website_path(website) %>
+        </div>
+    </div>
+<% end %>
+
+<%= link_to "まとめサイト追加", new_website_path %>

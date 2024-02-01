@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title>Myまとめ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <header>
+      <div class="header_left">
+        Myまとめ
+      </div>
+      <div class="header_right">
+        <ul>
+          <li>ログイン</li>
+          <li>新規登録</li>
+        </ul>
+      </div>
+    </header>
+    <%= yield %>
+  </body>
+</html>

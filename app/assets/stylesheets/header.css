@@ -1,0 +1,21 @@
+header {
+    height: 50px;
+    background-color: white;
+}
+
+.header_let {
+    float: left;
+    
+}
+
+.header_right {
+    float: right;
+}
+
+.header_right li {
+    list-style: none;
+}
+
+body {
+    background-color: aquamarine;
+}

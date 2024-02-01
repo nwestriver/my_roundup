@@ -1,0 +1,19 @@
+<%= form_with model: @website do |f| %>
+    <div class="website_container">
+        <div class="website_title">
+            <strong><%= f.label :title, "タイトル" %></strong><br>
+            <%= f.text_field :title, value: @website.title, size: 50 %>
+        </div>
+        <div class="website_url">
+            <strong><%= f.label :url, "サイトURL" %></strong><br>
+            <%= f.text_field :url, value: @website.url, size: 50 %>
+        </div>
+        <div>
+            <%= f.submit "更新" %>
+        </div>
+    </div>
+<% end %>
+<br>
+
+<%= link_to "キャンセル", website_path(@website) %>
+<%= link_to "一覧へ", websites_path %>

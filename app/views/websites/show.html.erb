@@ -1,0 +1,8 @@
+<div>
+    <%= @website.title %><br>
+    <%= @website.url %>
+</div>
+
+<%= link_to "削除", website_path(@website), data: {turbo_method: :delete, turbo_confirm: "#{@website.title}を削除します。よろしいですか？"} %>
+<%= link_to "編集", edit_website_path(@website) %>
+<%= link_to "一覧へ", websites_path %>
