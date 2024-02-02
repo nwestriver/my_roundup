@@ -1,0 +1,16 @@
+<h1>ユーザー詳細</h1>
+<div class="user_name">
+    <strong>ユーザー名</strong><br>
+    <div><%= @user.name%></div>
+</div>
+
+<div class="email">
+    <strong>メールアドレス</strong><br>
+    <div><%= @user.email%></div>
+</div>
+
+<div>
+    <%= link_to "編集", edit_user_path(@user) %>
+</div>
+
+<div></div>

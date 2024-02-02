@@ -1,5 +1,5 @@
 header {
-    height: 50px;
+    height: 65px;
     background-color: white;
 }
 
@@ -12,10 +12,18 @@ header {
     float: right;
 }
 
+.header_right ul {
+    display: flex;
+}
 .header_right li {
     list-style: none;
+    margin-right:5px;
 }
 
 body {
     background-color: aquamarine;
+}
+
+.current_user {
+    float: left;
 }
