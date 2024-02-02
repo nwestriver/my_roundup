@@ -15,10 +15,24 @@
       <div class="header_left">
         Myまとめ
       </div>
+      <div class="current_user">
+        <% if current_user %>
+          ログインユーザー：<%= current_user.name %>
+        <% end %>
+      </div>
       <div class="header_right">
         <ul>
-          <li>ログイン</li>
-          <li>新規登録</li>
+          
+          <% if current_user.present? %>
+            <li><%= link_to "マイページ", user_path(current_user) %></li>
+            <li><%= link_to "まとめサイト一覧", websites_path %></li>
+            <li><%= link_to "ログアウト", logout_path, data: {turbo_method: :delete, turbo_confirm: "ログアウトします。よろしいですか？"} %></li>
+            </li>
+            <% else %>
+              <li>
+            <%= link_to "ログイン", login_path %>
+              </li>
+          <% end %>
         </ul>
       </div>
     </header>
