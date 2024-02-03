@@ -8,8 +8,10 @@ class LoginsController < ApplicationController
         #binding.irb
         if user.present?
             session[:user_id] = user.id
-            redirect_to websites_path 
+            flash[:notice] = "ようこそ、#{user.name}さん！"
+            redirect_to user_websites_path(user) 
         else 
+            flash.now[:alert] = "ユーザー名またはメールアドレスが間違っています。"
             render :new
         end
     end

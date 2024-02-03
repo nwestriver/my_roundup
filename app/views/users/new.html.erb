@@ -1,18 +1,26 @@
-<h1>ユーザー新規登録</h1>
-<%= form_with model: @user do |f| %>
-    <div>
-        <%= f.label :name, "ユーザー名" %><br>
-        <%= f.text_field :name %>
+<div class="main new_user_main">
+    <div class="form_title">
+        <h1>ユーザー新規登録</h1>
     </div>
-    <div>
-        <%= f.label :email, "メールアドレス" %><br>
-        <%= f.text_field :email %>
-    </div>
+    <div class="user_form">
+        <%= form_with model: @user do |f| %>
+            <div>
+                <%= f.label :name, "ユーザー名" %><br>
+                <%= f.text_field :name %>
+            </div>
         <div>
-        <%= f.label :password_digest, "パスワード" %><br>
-        <%= f.text_field :password_digest %>
+            <%= f.label :email, "メールアドレス" %><br>
+            <%= f.text_field :email %>
+        </div>
+        <div>
+            <%= f.label :password_digest, "パスワード" %><br>
+            <%= f.text_field :password_digest %>
+        </div>
+        <div>
+            <%= f.submit "登録" %>
+        </div>
+        <% end %>
     </div>
-    <div>
-        <%= f.submit "登録" %>
-    </div>
-<% end %>
+
+    
+</div>

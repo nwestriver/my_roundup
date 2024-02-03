@@ -1,17 +1,12 @@
-.site_container {
-    background-color: white;
-    border: 2px solid;
-    margin: 2px 2px;
-}
-.new_website_main {
+.new_user_main {
     text-align: center;
     position: relative;
     min-height: 100vh;
 }
 
-.website_form {
+.user_form {
     padding: 30px;
-    height: 20%;
+    height: 25%;
     background-color: aliceblue;
     width: 40%;
     position: absolute;

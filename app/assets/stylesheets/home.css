@@ -1,0 +1,113 @@
+/* 全体　*/
+* {
+    box-sizing: border-box;
+}
+
+ul, li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    }
+
+.main {
+    width: 100%;
+    height: auto;
+
+}
+
+body {
+    background-color: aquamarine;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* topページ用　*/
+.top_main {
+    background-image: url("/beach.png");
+    background-size: cover;
+    position: absolute;
+    min-height: 100%;
+    color: black;
+    top: 0;
+    text-align: center;
+    padding: 200px 0 100px;
+}
+
+.top_main h1 {
+    font-size: 120px;
+}
+
+.top_main p {
+    font-size: 40px;
+}
+
+
+/* loginページ用*/
+.login_main {
+    text-align: center;
+    position: relative;
+    min-height: 100vh;
+}
+
+.login_form {
+    padding: 30px;
+    height: 20%;
+    background-color: aliceblue;
+    width: 40%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.form_title {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+/* ヘッダー用*/
+header {
+    height: 65px;
+    background-color: gainsboro;
+    width: 100%;
+    z-index: 1;
+}
+
+.header_left {
+    padding: 0 5px;
+    float: left;
+    line-height: 65px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.header_left a{
+    text-decoration: none;
+    display: block;
+}
+
+.header_right {
+    float: right;
+    line-height: 65px;
+}
+
+.header_right ul {
+    display: flex;
+}
+.header_right li {
+    list-style: none;
+    margin-right:5px;
+}
+
+
+.current_user {
+    float: left;
+    line-height: 65px;
+}
+
+.flash_notice {
+    background-color: orange;
+}
