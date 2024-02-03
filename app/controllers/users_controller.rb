@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         if @user.save
             #session処理
             session[:user_id] = @user.id
-            redirect_to websites_url
+            redirect_to user_websites_url(@user)
         else
             render :new, status: :unprocessable_entity
         end
@@ -25,10 +25,11 @@ class UsersController < ApplicationController
 
     def update
         @user = User.find(params[:id])
-        
         if @user.update(user_params)
+            flash[:notice] = "ユーザー情報を編集しました。"
             redirect_to user_path(@user)
         else
+            flash.now[:alert] = "ユーザー名またはパスワードが間違っています。"
             render :edit
         end
     end

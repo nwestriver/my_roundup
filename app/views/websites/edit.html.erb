@@ -1,19 +1,25 @@
-<%= form_with model: @website do |f| %>
-    <div class="website_container">
-        <div class="website_title">
-            <strong><%= f.label :title, "タイトル" %></strong><br>
-            <%= f.text_field :title, value: @website.title, size: 50 %>
-        </div>
-        <div class="website_url">
-            <strong><%= f.label :url, "サイトURL" %></strong><br>
-            <%= f.text_field :url, value: @website.url, size: 50 %>
-        </div>
-        <div>
-            <%= f.submit "更新" %>
-        </div>
+<div class="main edit_website_main">
+    <div class="form_title">
+        <h1>サイト情報</h1>
     </div>
-<% end %>
+
+    <div class="website_form">
+        <%= form_with model: [@user, @website] do |f| %>
+            <div class="website_title">
+                <strong><%= f.label :title, "タイトル" %></strong><br>
+                <%= f.text_field :title, value: @website.title, size: 50 %>
+            </div>
+            <div class="website_url">
+                <strong><%= f.label :url, "サイトURL" %></strong><br>
+                <%= f.text_field :url, value: @website.url, size: 50 %>
+            </div>
+            <div>
+                <%= f.submit "更新" %>
+            </div>
+        <% end %>
+    </div>
 <br>
 
-<%= link_to "キャンセル", website_path(@website) %>
-<%= link_to "一覧へ", websites_path %>
+    <%= link_to "キャンセル", user_website_path(@user, @website) %>
+    <%= link_to "一覧へ", user_websites_path(@user) %>
+</div>

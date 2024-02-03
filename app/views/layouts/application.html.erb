@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    <title>Myまとめ</title>
+    <title>My Roundup Sites</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -13,7 +13,11 @@
   <body>
     <header>
       <div class="header_left">
-        Myまとめ
+        <% unless current_user.present? %>
+          <%= link_to "My Roundup Sites", root_path %>
+        <% else %>
+          My Roundup Sites
+        <% end %>
       </div>
       <div class="current_user">
         <% if current_user %>
@@ -22,20 +26,20 @@
       </div>
       <div class="header_right">
         <ul>
-          
           <% if current_user.present? %>
             <li><%= link_to "マイページ", user_path(current_user) %></li>
-            <li><%= link_to "まとめサイト一覧", websites_path %></li>
+            <li><%= link_to "まとめサイト一覧", user_websites_path(current_user) %></li>
             <li><%= link_to "ログアウト", logout_path, data: {turbo_method: :delete, turbo_confirm: "ログアウトします。よろしいですか？"} %></li>
             </li>
-            <% else %>
-              <li>
-            <%= link_to "ログイン", login_path %>
-              </li>
           <% end %>
         </ul>
       </div>
     </header>
+    <% if flash[:notice] %>
+      <div class="flash_notice">
+        <%= flash[:notice]%>
+      </div>
+    <% end %> 
     <%= yield %>
   </body>
 </html>

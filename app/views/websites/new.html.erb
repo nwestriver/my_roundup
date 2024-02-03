@@ -1,13 +1,20 @@
-<%= form_with model: @website do |f| %>
-    <div>
-        <%= f.label :title, "タイトル" %><br>
-        <%= f.text_field :title %>
+<div class="main new_website_main">
+    <div class="form_title">
+        <h1>まとめサイト登録</h1>
     </div>
-    <div>
-        <%= f.label :title, "サイトURL" %><br>
-        <%= f.text_field :url %>
+    <div class="website_form">    
+        <%= form_with model: [@user, @user.websites.build] do |f| %>
+            <div>
+                <%= f.label :title, "タイトル" %><br>
+                <%= f.text_field :title %>
+            </div>
+            <div>
+                <%= f.label :title, "サイトURL" %><br>
+                <%= f.text_field :url %>
+            </div>
+            <div>
+                <%= f.submit "登録" %>
+            </div>    
+        <% end %>
     </div>
-    <div>
-        <%= f.submit "登録" %>
-    </div>    
-<% end %>
+</div>
